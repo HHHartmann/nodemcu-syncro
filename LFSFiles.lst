@@ -1,0 +1,3 @@
+core/*
+../nodemcu-LFS-base/LFS/*.lua
+../nodemcu-LFS-base/LFS/copy/*.lua
