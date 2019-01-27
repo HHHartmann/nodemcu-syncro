@@ -22,8 +22,8 @@ function blinkLed(pin, interval)
   fw.wait(interval)
 end
 
-fw.start(blinkLed(2, 20))
-fw.start(blinkLed(3, 17))
+fw.start(blinkLed, 2, 20)    -- will call blinkLed(2, 20) in a separate coroutine
+fw.start(blinkLed, 3, 17)
 ```
 
 which will blink the leds in given intervals.
