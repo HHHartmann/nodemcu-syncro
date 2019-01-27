@@ -3,20 +3,19 @@ local timer
 
 local framework = {}
 
-
+framework.this = framework
 
 local function resumeFromCB(co, ...)
-  print("resumeFromCB")
   local success, msg =
     coroutine.resume(co, unpack(arg))
-  if not success then print("error: ", msg) end
+  if not success then print("error: coroutine terminated with: ", msg) end
 end
 
 -- Wrap the CB inside a command like wait or when getting async
--- calls a function with a callback and handles cqroutine switch 
+-- calls a function with a callback and handles coroutine context switch 
 framework.awaitCB = function(method)
   local co = coroutine.running()
-  method(function (...) print("xxx") resumeFromCB(co, unpack(arg)) end )
+  method(function (...) resumeFromCB(co, unpack(arg)) end )
   coroutine.yield()
 end
 
@@ -42,5 +41,4 @@ end
 
 print("started Framework")
 
-
-framework.start(dofile("test.lua"), framework)
+return framework
