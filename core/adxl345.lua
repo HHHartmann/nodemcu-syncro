@@ -1,8 +1,8 @@
 --------------------------------------------------------------------------------
--- DS3231 I2C module for NODEMCU
+-- asxl345 I2C module for NODEMCU
 -- NODEMCU TEAM
 -- LICENCE: http://opensource.org/licenses/MIT
--- Tobie Booth <tbooth@hindbra.in>
+-- Gregor Hartmann (HHHartmann at GitHub)
 --------------------------------------------------------------------------------
 
 require("bit")
@@ -13,7 +13,7 @@ print ("loading module", moduleName)
 local moduleName = ...
 local M = {}
 _G[moduleName] = M
-print ("loading module", moduleName)
+
 
 local i2c_id = 0
 local adxl345_i2c_addr = 0x53

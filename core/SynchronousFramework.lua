@@ -3,8 +3,6 @@ local timer
 
 local framework = {}
 
-framework.this = framework
-
 local function resumeFromCB(co, ...)
   local success, msg =
     coroutine.resume(co, unpack(arg))
