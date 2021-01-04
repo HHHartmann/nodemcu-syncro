@@ -5,7 +5,7 @@ local framework = {}
 
 local function resumeFromCB(co, ...)
   local success, msg =
-    coroutine.resume(co, unpack(arg))
+    coroutine.resume(co, ...)
   if not success then print("error: coroutine terminated with: ", msg) end
 end
 
@@ -13,7 +13,7 @@ end
 -- calls a function with a callback and handles coroutine context switch 
 framework.awaitCB = function(method, ...)
   local co = coroutine.running()
-  local cb = function (...) resumeFromCB(co, unpack(arg)) end 
+  local cb = function (...) resumeFromCB(co, ...) end 
   method(cb , ... )
   return coroutine.yield()
 end
@@ -39,7 +39,7 @@ framework.awaitCBMulti = function(method, ...)
   setmetatable(cbs, mt)
   -- cbs.cbName muss ein wrapper sein, der einfach den name vor die Params klemmt
   mt.__index =  function(table, key)
-                  return   function (...) resumeFromCB(co, key, unpack(arg)) end 
+                  return   function (...) resumeFromCB(co, key, ...) end 
                 end
   method(cbs , ... )
   return coroutine.yield()
@@ -76,13 +76,13 @@ framework.wait2 = framework.CreateSyncFunctionMultipleCB(function(cbs, time)
 -- func   the function to run
 -- additional params are handed to func
 framework.start = function(func, ...)
-  resumeFromCB(coroutine.create(func), unpack(arg))
+  resumeFromCB(coroutine.create(func), ...)
 end
 
 -- define new routine to be called on CB. Starting a new coroutine every time
 framework.wrapCB = function(callback)
   return function (...) 
-            framework.start(callback, unpack(arg))
+            framework.start(callback, ...)
          end 
 end
 

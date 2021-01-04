@@ -8,9 +8,9 @@
 require("bit")
 require("i2c")
 
+local moduleName = ...
 print ("loading module", moduleName)
 
-local moduleName = ...
 local M = {}
 _G[moduleName] = M
 

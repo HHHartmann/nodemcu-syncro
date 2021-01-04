@@ -1,9 +1,9 @@
 require("http")
 SynchronousFramework = require("SynchronousFramework")
 
+local moduleName = ...
 print ("loading module", moduleName)
 
-local moduleName = ...
 local M = {}
 _G[moduleName] = M
 
