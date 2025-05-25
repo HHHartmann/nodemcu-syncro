@@ -1,0 +1,17 @@
+../Projects/*.lua
+../Projects/Gregor/Sensor/Sensor.lua
+../nodemcu-LFS-base/LFS/FileDist.lua
+../nodemcu-LFS-base/LFS/GetConfig.lua
+../nodemcu-LFS-base/LFS/LINQ.lua
+../nodemcu-LFS-base/LFS/Logger.lua
+../nodemcu-LFS-base/LFS/WebServer.lua
+../nodemcu-LFS-base/LFS/WifiStarter.lua
+../nodemcu-LFS-base/LFS/bootprotect.lua
+../nodemcu-LFS-base/LFS/dummy_strings.lua
+../nodemcu-LFS-base/LFS/start.lua
+../nodemcu-LFS-base/LFS/wifiConfig.lua
+../nodemcu-LFS-base/LFS/copy/fifo.lua
+../nodemcu-LFS-base/LFS/copy/fifosock.lua
+../nodemcu-LFS-base/LFS/copy/gossip.lua
+../nodemcu-LFS-base/LFS/copy/httpserver.lua
+../nodemcu-LFS-base/LFS/copy/telnet.lua

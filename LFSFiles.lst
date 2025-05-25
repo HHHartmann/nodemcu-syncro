@@ -2,3 +2,6 @@ core/*
 modules/*
 ../nodemcu-LFS-base/LFS/*.lua
 ../nodemcu-LFS-base/LFS/copy/*.lua
+../Projects/*.lua
+../Projects/*/*.lua
+../Projects/*/*/*.lua

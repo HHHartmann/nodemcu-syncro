@@ -1,0 +1,11 @@
+core/hw_UDP.lua
+core/SynchronousFramework.lua
+core/UDP.lua
+../Projects/ApplicationStart.lua
+../Projects/Gregor/Sensor/Sensor.lua
+../Projects/Gregor/Sensor/Wasser.lua
+../Projects/Gregor/LED-Strip/decode_BMP.lua
+../Projects/Gregor/LED-Strip/LED-strip-remote.lua
+../Projects/Gregor/LED-Strip/LED-strip.lua
+../nodemcu-LFS-base/LFS/*.lua
+../nodemcu-LFS-base/LFS/copy/*.lua
